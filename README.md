@@ -10,7 +10,9 @@ This container will run etcd in a docker. The etcd service is only accessible to
 
 To keep configuration on etcd remove, it's useful to store the database on the host file-system.
 
-# Running the 
+> __Nota :__ the version of the docker image will reflect the version of the embedded etcd server.
+
+# Running
 
 > Nota : you can obtain the last builded images from the NAS /exploitation/Docker, to deploy the image on a server ( {{serverName}} ) with docker-machine :
 >
@@ -22,6 +24,15 @@ To keep configuration on etcd remove, it's useful to store the database on the h
         --name etcd \
         -v /opt/data/etcd:/data \
         etcd:2.1.1
+
+# properties
+
+  - Exposed port : 2379 & 4001
+  - Volumes :
+    - /data : the database directory
+  - link : none
+
+> __Nota :__ As ETCD may contain vital information about your configuration, it is not recommanded to bind the ports to the host public interface.
 
 # Using etcd
 
