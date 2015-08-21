@@ -4,9 +4,6 @@ FROM    busybox
 
 MAINTAINER  Fabrice Le Coz <fabrice.lecoz@telecomsante.com>
 
-LABEL version="1.0"
-LABEL description="service discovery etcd v2.1.1"
-
 ADD    etcd-v2.1.1-linux-amd64.tar.gz /opt
 
 RUN     ln -sfn /opt/etcd-v2.1.1-linux-amd64/etcd /bin && \
@@ -17,5 +14,9 @@ COPY    start.sh  .
 VOLUME  ["/data"]
 
 EXPOSE  2379 4001
+
+LABEL version="2.1.1"
+LABEL description="service discovery etcd v2.1.1"
+LABEL buitdate="August, 2015"
 
 CMD ["./start.sh"]
