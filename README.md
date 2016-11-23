@@ -1,5 +1,5 @@
-% etcd docker : service discovery
-% Fabrice Le Coz
+% etcd docker : service discovery  
+% Fabrice Le Coz  
 % August, 2015
 
 # etcd
@@ -55,10 +55,5 @@ Read a key :
 Remove a key :
 
     etcdctl rm mykey
-    
+
 For further documentation about etcd, consult [the official website](https://coreos.com/etcd/docs/latest/api.html)
-
-
-
-
-
